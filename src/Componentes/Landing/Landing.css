@@ -1,0 +1,110 @@
+.home-cont{
+    margin: 10px;
+}
+.sec-inicios-sesion, .sec-register{
+    display: flex;
+    
+    flex-direction: column;
+    
+}
+.sec-register{
+    margin-top: 30px;
+}
+.inicios-sesion, .register{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.inicios-sesion:hover, .sec-register:hover{
+    cursor: pointer;
+}
+.inicios-sesion>div>h6, .register>div>h6{
+    margin-top: 15px;
+    text-align: center;
+    
+}
+.inicios-sesion > div, .register >div{
+    background-color: var(--global-bg-color-soft);
+    border: solid 2px var(--global-primary-color);
+    border-radius: 8px;
+    height: 170px;
+    width: 210px;
+    margin: 5px;
+    border-radius: 15px;
+    
+}
+.inicios-sesion > div>center>img, .register>div>center>img{
+    width: 90px;
+    
+    
+}
+.inicios-sesion > div>center>img:hover, .register>div>center>img:hover{
+    width: 90px;
+}
+
+@media  screen and (min-width:700px){
+    .home-cont{
+        margin: 0 30px 0 30px;
+    }
+    .inicios-sesion{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:flex-end;
+        margin-right: 100px ;
+        
+    }
+    .inicios-sesion>div>h6, .register>div>h6{
+    
+        font-size: larger;
+      
+        margin: 20px 5px 20px 5px;
+        
+    }
+    .register{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:flex-start;
+        margin-left: 100px ;
+    }
+
+    .sec-register > h3 {
+        text-align: right;
+        font-size:30px;
+        
+    }
+    .sec-inicios-sesion>h3{
+        
+        font-size:30px;
+    }
+    .sec-inicios-sesion{
+        margin-top: 80px;
+    }
+    .sec-register{
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .inicios-sesion > div, .register >div{
+        
+        height: 240px;
+        width: 280px;
+        margin: 5px;
+        border-radius: 15px;
+        
+    }
+    .inicios-sesion > div>center>img, .register>div>center>img{
+        width: 120px;
+        vertical-align: bottom;  
+    }
+    .inicios-sesion > div>center>img:hover, .register>div>center>img:hover{
+        width: 160px;
+        vertical-align: bottom;  
+    }
+    .inicios-sesion, .register{
+        justify-content: space-evenly;
+        margin-top: 60px;
+    }
+
+}
+
