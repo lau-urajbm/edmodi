@@ -30,6 +30,7 @@ const useAuthS = ()=>{
           
     console.log(formik.values)
     alert('hola')
+    formik.resetForm()
         }
       const formik = useFormik({initialValues, validationSchema, onSubmit} )
       const{handleSubmit,
@@ -66,8 +67,10 @@ const useAuthS = ()=>{
                 <span className="error-message">{errors.code}</span>
               )}
             </div>
+            <div>
+            <Link className='linkTo' to={splitLocation[1] === 'registers'?'/logins':'/registers'}>{splitLocation[1] === 'registers'?'Iniciar Sesión':'Registrarse'}</Link>
             <button type='submit'>{action}</button>
-            <Link className='linkTo' to={splitLocation[1] === 'registers'?'/logins':'/registers'}>{splitLocation[1] === 'registers'?'Regristrarse':'Iniciar sesión'}</Link>
+            </div>
           </form>
           
     

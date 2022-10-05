@@ -30,6 +30,7 @@ const useAuthP = () => {
         
   console.log(formik.values)
   alert('hola')
+  formik.resetForm()
   
       }
     const formik = useFormik({initialValues, validationSchema, onSubmit} )
@@ -70,8 +71,10 @@ const useAuthP = () => {
           )}
           <span onClick={handleShowPassP} className='show'>{showpassP?'Ocultar contraseña':'Ver contraseña'}</span>
         </div>
-        <button type='submit'>{action}</button>
-        <Link className='linkTo' to={splitLocation[1] === 'registerp'?'/loginp':'/registerp'}>{splitLocation[1] === 'registerp'?'Regristrarse':'Iniciar sesión'}</Link>
+        <div>
+            <Link className='linkTo' to={splitLocation[1] === 'registers'?'/logins':'/registers'}>{splitLocation[1] === 'registers'?'Iniciar Sesión':'Registrarse'}</Link>
+            <button type='submit'>{action}</button>
+            </div>
       </form>
 
     </div>

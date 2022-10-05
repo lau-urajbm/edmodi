@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Landing.css'
 
 const Landing = () => {
@@ -11,14 +12,18 @@ const Landing = () => {
             <div>
               <h6>Inicia sesión como profesor</h6>
               <center>
+              <Link to='/loginp'>
                 <img src='https://cdn-icons-png.flaticon.com/256/6101/6101814.png'></img>
+                </Link>
               </center>
 
               </div>
             <div>
               <h6>Inicia sesión como estudiante</h6>
               <center>
+                <Link to='/logins'>
                 <img src='https://cdn-icons-png.flaticon.com/256/6101/6101571.png'></img>
+                </Link>
               </center>
             </div>
         </div>
@@ -29,14 +34,18 @@ const Landing = () => {
             <div>
               <h6>Crea una cuenta como profesor</h6>
               <center>
+                <Link to='/registerp'>
                 <img src='https://cdn-icons-png.flaticon.com/256/6101/6101113.png'></img>
+                </Link>
               </center>
 
               </div>
             <div>
               <h6>Crea una cuenta como estudiante</h6>
               <center>
+                <Link to='/registers'>
                 <img src='https://cdn-icons-png.flaticon.com/256/6101/6101269.png'></img>
+                </Link>
               </center>
             </div>
         </div>

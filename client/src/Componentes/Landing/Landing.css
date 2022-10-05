@@ -33,13 +33,13 @@
     border-radius: 15px;
     
 }
-.inicios-sesion > div>center>img, .register>div>center>img{
-    width: 90px;
+.inicios-sesion > div>center> a >img, .register>div>center>a>img{
+    width: 120px;
     
     
 }
-.inicios-sesion > div>center>img:hover, .register>div>center>img:hover{
-    width: 90px;
+.inicios-sesion > div>center>a>img:hover, .register>div>center>a>img:hover{
+    width: 130px;
 }
 
 @media  screen and (min-width:700px){

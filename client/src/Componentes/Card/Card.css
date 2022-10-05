@@ -1,0 +1,29 @@
+.card{
+    border: outset 2px var(--global-primary-color);
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px #dbdbdb;
+}
+.card>p{
+    border-radius: 5px 25px 25px 5px;
+    background-color: #06A9FB;
+    width: fit-content;
+    padding: 5px;
+}
+.card > div{
+    background-color: #06a9fb19;
+    padding: 15px;
+}
+.card>div>div{
+    border:dashed 1px #06A9FB;
+    padding: 10px;
+}
+
+@media screen and (min-width:650px) {
+    .card>p{
+        border-radius: 5px 25px 25px 5px;
+        background-color: #06A9FB;
+        width: fit-content;
+        padding: 10px;
+    }
+}

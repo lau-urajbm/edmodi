@@ -1,0 +1,41 @@
+.barra-lateral{
+    display: flex;
+    flex-direction: column;
+   
+    
+    
+}
+.barra-lateral > section> div{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+.barra-lateral> section > div > img {
+    width: 100px;
+    border-radius:50px;
+    border: solid 5px var(--global-primary-color) ;
+    
+   
+}
+.barra-lateral> section > div > ul{
+    width: 100%;  
+    padding: 0;   
+}
+.barra-lateral> section > div > ul > h6{
+    margin: 15px;
+}
+.barra-lateral> section > div > ul > li{
+    list-style: none;
+    border: dashed 1px var(--global-primary-color);
+    padding: 10px;
+}
+
+@media screen and (min-width:650px) {
+
+    .barra-lateral{
+        width: 220px;
+        box-shadow: 0 2px 5px #dbdbdb;
+        height: 100vh;
+    }
+}

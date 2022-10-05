@@ -1,0 +1,48 @@
+.home-contenedor{
+    display: flex;
+    flex-direction: column;
+}
+
+.home-contenedor > button{
+    background-color: var(--global-primary-color);
+    border-radius: 8px;
+    border: solid 5px var(--global-border);
+    width: fit-content;
+    align-self: flex-end;
+    margin: 20px;
+    color: rgb(246, 246, 246);
+}
+    
+    
+
+
+
+@media screen and (min-width:650px) {
+    .home-contenedor{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .home-contenedor >div > div.contenido > button{
+        background-color: var(--global-primary-color);
+        border-radius: 8px;
+        border: solid 5px var(--global-border);
+        width: fit-content;
+        color: rgb(246, 246, 246);
+        align-self: flex-end;
+        padding: 5px;
+        height: fit-content;
+        margin-right: 15px;    
+    }
+    .home-contenedor > div {
+        display: flex;
+        
+    }
+    div.contenido{
+        margin: 20px;
+        width: calc(100vw - 200px);
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+}

@@ -1,3 +1,9 @@
+.auth-h{
+  min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .auth{
     min-height: 100vh;
     display: flex;
@@ -8,7 +14,7 @@
   *{
     font-family: 'Nunito', sans-serif;
   }
-  .auth>form{
+  .auth>form .auth-h>form{
     width: 100%;
     padding: 20px;
     display: flex;
@@ -16,7 +22,7 @@
     justify-content: center;
     flex-direction: column;
   }
-  .auth>form>div{
+  .auth>form>div, .auth-h>form>div{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -24,7 +30,7 @@
     padding: 5px 0px;
   }
 
-  .auth>form>div>a{
+  .auth>form>div>a, .auth-h>form>div>a{
     text-decoration: none;
     color: rgb(0, 0, 0);
   }
@@ -32,12 +38,17 @@
   .auth > form > div > *:not(label){ 
   padding: 8px 0px;
 }
+.auth-h > form > div > *:not(label){ 
+  padding: 8px 0px;
+}
 .auth > form > div>input,
-.auth > form > div>select{
+.auth > form > div>select,
+.auth-h > form > div>input,
+.auth-h > form > div>select{
   padding: 8px !important;
 }
 
-.auth > form > div > div{ 
+.auth > form > div > div, .auth-h > form > div > div{ 
     color: var(--global-primary-color);
     font-size: 15px;
   }
@@ -47,10 +58,20 @@
     border: var(--global-border);
 
 }
+.auth-h input{
+  border-radius: var(--global-radius);
+  border: var(--global-border);
 
-.auth button{
+}
+.auth-h textarea{
+  border-radius: var(--global-radius);
+  border: var(--global-border);
+
+}
+
+.auth >form>div> button{
     margin-top: 25px;
-   
+   justify-self: center;
     transition: all 0.3s ease-out;
     background-color: var(--global-primary-color);
     border-radius: var(--global-radius);
@@ -60,9 +81,21 @@
     font-size: 16px;
     cursor: pointer;
 }
+.auth-h button{
+  margin-top: 25px;
+ 
+  transition: all 0.3s ease-out;
+  background-color: var(--global-primary-color);
+  border-radius: var(--global-radius);
+  border:.0;
+  color: white;
+  padding: 10px !important;
+  font-size: 16px;
+  cursor: pointer;
+}
 
 
-.auth button:hover{
+.auth button:hover, .auth-h button:hover{
     
     color: var(--global-primary-color);
     border-radius: var(--global-radius);
@@ -98,11 +131,32 @@
     .auth{
       background-color: var(--global-bg-color-soft);
     }
-    .auth>form{
+    .auth>form, .auth-h>form{
       border: var(--global-border);
+      padding: 15px;
       width: 400px;
       border-radius: var(--global-radius);
-      
+      color: rgb(11, 11, 11);
       background-color: white;
     }
+    .modal-header >h1{
+      color:rgb(11, 11, 11);
+    }
+    .modal-footer >button{
+      width: 100%;
+      
+    }
+    header > div > button{
+      margin-top: 25px;
+ 
+  transition: all 0.3s ease-out;
+  background-color: var(--global-primary-color);
+  border-radius: var(--global-radius);
+  border:.0;
+  color: white;
+  padding: 10px !important;
+  font-size: 16px;
+  cursor: pointer;
+    }
+    
   }
