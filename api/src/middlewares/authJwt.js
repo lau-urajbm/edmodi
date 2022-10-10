@@ -28,7 +28,9 @@ async function isProf(req,res, next){
     req.user = user
     next()
   }else{
-    res.status(401).json({message:'Unauthorized'})
+    req.isProf= false
+    req.user= user
+   next()
   }
 
   console.log(user.isProf)

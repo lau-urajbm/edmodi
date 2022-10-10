@@ -15,13 +15,14 @@ const usersReducer=(state = initialState, action)=>{
             }
         case USER_DATA_SUCCESS:
             return{
-                
+                ...state,
                 loading:false,
                 error:'',
                 user:action.payload
             }
         case USER_DATA_FAILURE:
             return{
+                
                 loading:false,
                 error:action.payload,
                 user:[]

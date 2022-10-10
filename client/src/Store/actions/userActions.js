@@ -9,9 +9,9 @@ import axios from "axios";
 export const userDataRequest = () => ({
   type: USER_DATA_REQUEST,
 });
-export const userDataSuccess = () => ({
+export const userDataSuccess = (data) => ({
   type: USER_DATA_SUCCESS,
-  
+  payload: data,
 });
 export const userDataFailure = (error) => ({
   type: USER_DATA_FAILURE,
@@ -67,7 +67,6 @@ export const loginProf = (userName, password) => async (dispatch) => {
 
     console.log(res);
     dispatch(userDataSuccess(res.data))
-    dispatch(userDataSuccess)
     return res;
 
     /*  localStorage.setItem('token', res.data)
@@ -89,7 +88,6 @@ export const loginStudent = (userName, password) => async (dispatch) => {
   
       console.log(res);
       dispatch(userDataSuccess(res.data))
-      dispatch(userDataSuccess)
       return res;
   
       /*  localStorage.setItem('token', res.data)
@@ -101,7 +99,6 @@ export const loginStudent = (userName, password) => async (dispatch) => {
 
 export const getRole = (token)=>async(dispatch)=>{
   try{
-    dispatch(userDataRequest)
     const res = await axios.get(`http://localhost:3001/auth/role`, {
       headers: {'x-access-token': token},
     })
@@ -109,7 +106,6 @@ export const getRole = (token)=>async(dispatch)=>{
       type: GET_USER_ROLE,
       payload: res.data,
     })
-    dispatch(userDataSuccess)
 
   }catch(err){
     dispatch(userDataFailure(err))

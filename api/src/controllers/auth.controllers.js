@@ -105,9 +105,9 @@ async function loginStudent(req, res) {
 function role(req, res){
   try{
   if(req.isProfe===true){
-    res.json({'isProf':true})
+    res.json({'isProf':true, userData:req.user.userName})
   }else{
-    res.status(401).json({'isProf':false})
+    res.json({'isProf':false, userData:req.user.userName})
   }
   }catch(err){
     res.send(err)
