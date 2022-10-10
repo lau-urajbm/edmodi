@@ -6,7 +6,8 @@ import useAuthP from '../authP'
 
 const LoginP = () => {
     const authP =useAuthP()
-const {html}=authP
+const {html, initialValues}=authP
+
 return(
     html('Iniciar sesión')
     )

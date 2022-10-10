@@ -6,7 +6,8 @@ import useAuthS from '../authS'
 
 const LoginS = () => {
   const authS=useAuthS()
-  const {html}=authS
+  const {html, initialValues}=authS
+
   return(
     html('Iniciar sesión')
   )

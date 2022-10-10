@@ -1,9 +1,14 @@
-import React, { useState }  from 'react'
+import React, { useEffect, useState }  from 'react'
+import swal from '@sweetalert/with-react'
 import * as Yup from 'yup'
 import {useFormik} from 'formik'
-import {Link, useLocation} from 'react-router-dom'
+import {Link, useLocation, useNavigate} from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { /* loginProf,  */loginStudent, registerStudent } from '../../../Store/actions/userActions'
 
 const useAuthS = ()=>{
+  const dispatch = useDispatch()
+  const navigate= useNavigate()
     const location = useLocation()
     const {pathname}=location
     const splitLocation = pathname.split("/")
@@ -13,25 +18,59 @@ const useAuthS = ()=>{
     const initialValues ={
         userName:'',
         password:'',
-        code:'',
+        isProf:false,
+        /* code:'', */
       }
       const required = 'Campo requerido'
       const validationSchema = Yup.object().shape({
         userName:Yup.string().min(4, 'El nombre de usuario debe contener mínimo 6 caracteres').required(required),
         password:Yup.string().min(6, 'La contraseña debe contener mínimo 6 caracteres').max(50, 'Demasiados caracteres').required(required),
-        code:Yup.string().min(6, 'El Código debe contener más de 6 caracteres').max(50, 'Demasiados caracteres').required(required)
+        /* code:Yup.string().min(6, 'El Código debe contener más de 6 caracteres').max(50, 'Demasiados caracteres').required(required), */
+        isProf:Yup.boolean().required(required)
         })
 
         const handleShowPass = ()=>{
             setShowPass(!showpass)
           }
           
-        const onSubmit=()=>{
+        const onSubmit=async()=>{
           
     console.log(formik.values)
-    alert('hola')
+    if(splitLocation[1] === 'registers'){
+      const res = await dispatch(registerStudent(values.userName, values.password, values.isProf))
+      console.log(res.data)
+      if(res.data){
+        swal({
+          text:res.data.message
+        })
+        navigate('/logins')
+      }else{
+        swal({
+          text:res.response.data.message
+        })
+        
+      }
+      console.log(res)
+    } else{
+     const res= await dispatch(loginStudent(values.userName, values.password))
+     console.log(res, 'antes del if')
+     if(res?.data?.isProf === false){
+      localStorage.setItem('token', res.data.token)
+      navigate('/homes')
+     }else{
+      swal({
+        text:res.response.data.message
+      })
+      
+     }
+      console.log(res, 'en el componente')
+    } 
     formik.resetForm()
         }
+
+        useEffect(()=>{
+
+        },[onSubmit])
       const formik = useFormik({initialValues, validationSchema, onSubmit} )
       const{handleSubmit,
         handleChange,

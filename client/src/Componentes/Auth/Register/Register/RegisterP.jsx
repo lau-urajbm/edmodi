@@ -7,7 +7,8 @@ import '../Auth.css'
 const RegisterP = () => {
 
   const authP =useAuthP()
-const {html}=authP
+const {html, initialValues}=authP
+
 return(
     html('Registrarse')
     )

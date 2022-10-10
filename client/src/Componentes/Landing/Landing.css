@@ -34,12 +34,12 @@
     
 }
 .inicios-sesion > div>center> a >img, .register>div>center>a>img{
-    width: 120px;
+    width: 100px;
     
     
 }
 .inicios-sesion > div>center>a>img:hover, .register>div>center>a>img:hover{
-    width: 130px;
+    width: 110px;
 }
 
 @media  screen and (min-width:700px){
@@ -93,13 +93,15 @@
         border-radius: 15px;
         
     }
-    .inicios-sesion > div>center>img, .register>div>center>img{
+    .inicios-sesion > div>center> a >img, .register>div>center>a>img{
         width: 120px;
-        vertical-align: bottom;  
+        vertical-align: bottom;
+        
+        
     }
-    .inicios-sesion > div>center>img:hover, .register>div>center>img:hover{
-        width: 160px;
-        vertical-align: bottom;  
+    .inicios-sesion > div>center>a>img:hover, .register>div>center>a>img:hover{
+        width: 130px;
+        vertical-align: bottom;
     }
     .inicios-sesion, .register{
         justify-content: space-evenly;

@@ -5,11 +5,36 @@ import './HomeP.css'
 import useResize from '../../Hooks/useResize'
 import * as Yup from 'yup'
 import {useFormik} from 'formik'
-import {Link, useLocation} from 'react-router-dom'
+import {Link, useLocation, useNavigate} from 'react-router-dom'
 import Card from '../Card/Card'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { getRole } from '../../Store/actions/userActions'
 
 const HomeP = () => {
     const {isPhone}=useResize()
+    const dispatch = useDispatch()
+    const navigate=useNavigate()
+
+    const {user}= useSelector(state=>{
+      return state.usersReducer
+    })
+    const getUserRole=async()=> await dispatch(getRole(token))
+    const token = localStorage.getItem('token')
+    useEffect( ()=>{
+      if(!token){
+        return navigate('/')
+      }
+      
+      if(!user.isProf){
+      getUserRole()
+       if(!user.isProf){
+        navigate('/')
+       }
+
+      }
+    }, [token, user])
+    console.log(user.isProf)
     const initialValues ={
         homework:'',
         description:'',
